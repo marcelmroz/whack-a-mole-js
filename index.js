@@ -1,5 +1,6 @@
 const gameContainer = document.querySelector('.container');
 const allMoleItems = document.querySelectorAll('.item');
+
 let startGame, startTime, countDown = 20, score = 0;
 
 const timeCount = document.getElementById('time-count');
@@ -38,12 +39,12 @@ function showMole(){
     if(countDown <= 0){
         clearInterval(startGame);
         clearInterval(startTime);
+        
         timeCount.innerHTML = "0";
     }
     let moleToAppear = allMoleItems[getRandomValue()].querySelector('.mole');
     moleToAppear.classList.add('mole-appear');
     hideMole(moleToAppear);
-    
 }
 
 function getRandomValue(){
